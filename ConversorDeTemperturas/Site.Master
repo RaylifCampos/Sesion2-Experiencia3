@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ConversorDeTemperturas.SiteMaster" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conversor de temperatura</title>
+  </head>
+  <body>
+    
+    <form id="Form1" runat="server" method="POST">
+      <h1>Conversor de temperatura</h1>
+      <div>
+        <fieldset>
+          <legend>Estado civil</legend>
+          <input id="Farh" runat="server" type="radio" name="grado" value="Fahrenheith" /> Fahrenheith<br /> 
+          <input id="Kel" runat="server" type="radio" name="grado" value="Kelvin" /> Kelvin<br /> 
+          <input id="Cel" runat="server" type="radio" name="grado" value="Celsius" /> Celsius
+          </fieldset>
+      </div>
+     
+      <div>
+        Convertir: &nbsp;
+       <input runat="server" type="number" id="valor"> Fahrenheith a 
+          <select id="Temperaturas" runat="server"/>
+        <br/><br/>
+          <input type="submit" id="Convertir" runat="server" value="Aceptar"              OnServerClick ="Convertir_ServerClick" />         
+        <p>Resultado: </p>&nbsp;
+     <div style="font-weight:bold" id="Resultado" runat="server"></div>&nbsp;
+      </div>
+      <h3>Deja tu comentario: </h3>
+      <textarea rows="4" cols="30">Escribe...</textarea>
+      
+    </form>
+  
+    
+</body>
+</html>
