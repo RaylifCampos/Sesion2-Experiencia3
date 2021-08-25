@@ -17,6 +17,16 @@ namespace ConversorDeTemperturas
                 Temperaturas.Items.Add(new ListItem("Fahrenheit", "2"));
                 Temperaturas.Items.Add(new ListItem("Kelvin", "3"));
             }
+            {
+                if (this.IsPostBack == false)
+                {
+                    Temperaturas.Items.Add(new ListItem("Centigrados", "1"));
+                    Temperaturas.Items.Add(new ListItem("Fahrenheit", "2"));
+                    Temperaturas.Items.Add(new ListItem("Kelvin", "3"));
+                }
+                Grafico.Visible = false;
+            }
+
 
         }
         protected void Convertir_ServerClick(Object sender, EventArgs e)
@@ -42,6 +52,24 @@ namespace ConversorDeTemperturas
                 Resultado.InnerText += conversion.ToString() + " " + elemento.Text;
 
             }
+            Resultado.InnerText += conversion.ToString() + " " + elemento.Text;
+            if (Fahrenheit < 0)
+            {
+                Resultado.Style["color"] = "Red";
+                Resultado.InnerText += " Ingreso una temperatura menor a cero";
+            }
+            else
+            {
+                Resultado.Style["color"] = "Blue";
+            }
+
+
+        }
+        protected void MostrarGrafico_ServerClick(Object sender, EventArgs e)
+        {
+            Grafico.Src = "figura" + Temperaturas.SelectedIndex.ToString() + ".jpg";
+            Grafico.Alt = "Grafico Temperatura";
+            Grafico.Visible = true;
 
         }
     }

@@ -25,6 +25,10 @@
           <input type="submit" id="Convertir" runat="server" value="Aceptar"              OnServerClick ="Convertir_ServerClick" />         
         <p>Resultado: </p>&nbsp;
      <div style="font-weight:bold" id="Resultado" runat="server"></div>&nbsp;
+          <input type="submit" id="MostrarGrafico" runat="server" value="Mostrar
+        Figura" OnServerClick ="MostrarGrafico_ServerClick" />
+            <br /><br />
+        <img id="Grafico" runat="server" />
       </div>
       <h3>Deja tu comentario: </h3>
       <textarea rows="4" cols="30">Escribe...</textarea>
